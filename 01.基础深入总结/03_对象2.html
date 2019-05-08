@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>03_相关问题</title>
+</head>
+<body>
+<!--
+问题: 什么时候必须使用['属性名']的方式?
+  * 属性名不是合法的标识名
+  * 属性名是变量(不确定)
+-->
+<script type="text/javascript">
+  
+  /*var obj = {}
+  obj.name = '佩奇'
+  //obj.en-name = 'peiqi'
+  obj['en-name'] = 'peiqi'
+  console.log(obj)*/
+  
+  var a = 'name'
+  var b = 'age'
+  var p = {}
+  p[a] = 'kobe'
+  console.log(p)
+  
+
+</script>
+</body>
+</html>

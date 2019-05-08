@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>01_数据类型</title>
+</head>
+<body>
+<!--
+1. js中数据类型的分类(2大类)
+  * 基本(值)类型：
+    * Number: 任意数值 1   1.5   1.50
+    * String: 任意文本 '1'  "1"
+    * Boolean: true/false
+    * undefined: undefined
+    * null: null
+    
+  * 对象(引用)类型：
+    * Object: 任意对象（一般对象） {}
+    * Array: 一种特别的对象类型(1.可以通过下标取值。2.内部数据有序)
+    * Function: 一种特别的对象类型(可执行)
+      备注：准确来说Array和Function属于一种特别的Object类型。
+    
+2. 判断：
+  * typeof：注意typeof的返回值是类型的字符串名称（注意：首字母是小写的）
+    * 可以区别: 数值, 字符串, 布尔值, undefined, function
+    * 正常记忆：不能区别 null与对象,null与数组，数组与对象
+    * 巧记方式：
+        * 一个不正确：typeof null的结果是object
+        * 一个不精确：typeof []的结果是object
+        * 一个没问题：typeof {}的结果是object
+        * 以上三种数据类型两两组合都不能用typeof区分
+    
+  * instanceof：
+    * 专门用来判断对象数据的具体类型: Object, Array与Function
+    * A instanceof B ==> 判断A是否是B这个类型的实例对象（B是构造函数名）
+    
+  * ===
+    * 可以判断: undefined和null
+    * 备注：因为undefined类型只有一个值、null类型也只有一个值，所以可以用===判断
+    
+-->
+
+<script type="text/javascript">
+  
+  /*
+  * 基本数据类型的判断
+  * */
+  var a
+  console.log(typeof a === undefined,typeof a === 'undefined',a === undefined,a === 'undefined')
+  
+  a = 3
+  console.log(typeof a === 'number')
+  
+  a = 'atguigu'
+  console.log(typeof a === 'string')
+  
+  a = true
+  console.log(typeof a === 'boolean')
+  
+  a = null
+  console.log(typeof a)
+  //注意这个特别的，typeof null返回的是'object'，由于js底层设计的“缺陷”。
+  
+  
+  /*
+  * 对象类型的判断
+  * */
+  var b1 = {
+    b2:[2,'atguigu',console.log],
+    b3:function () {
+      console.log('b3')
+    }
+  }
+  
+  console.log(b1,b1.b2,b1.b3)
+  console.log(b1 instanceof Object,typeof b1)//true "object"
+  console.log(b1.b2 instanceof Array,typeof b1.b2)//true "object"
+  console.log(b1.b3 instanceof Function,typeof b1.b3)//true "function"
+  
+  //扩展
+  console.log(typeof b1.b2[2])//function
+  console.log(typeof b1.b2[2]('atguigu'))//'atguigu' 'undefined'
+  console.log(b1.b2[2]('atguigu'))//'atguigu' undefined
+  
+  
+  //b1.b2[2]('atguigu')
+  /*console.log('@@@@@@@@@@@@@@@@@@@')
+  var haha = console.log('haha')
+  console.log(haha)*/
+  
+  /*function demo() {
+  }
+  console.log(typeof demo())*/
+  
+
+
+  
+  
+
+</script>
+</body>
+</html>

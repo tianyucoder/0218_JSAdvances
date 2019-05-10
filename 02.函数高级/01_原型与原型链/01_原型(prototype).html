@@ -20,7 +20,7 @@
   demo.prototype.test1 = function () {
     console.log('我是demo原型上的test1')
   }
-  //给demo的原型上追加一个test2属性-------------这种写法没有意义
+  //给demo的原型上追加一个test2属性-------------这种写法没有意义,一般都追加方法
   demo.prototype.test2 = 'atguigu'
   
   //尝试“废掉”demo的prototype----------------自己定义的函数的prototype允许“废掉”
@@ -48,7 +48,7 @@
   //给Date的原型对象上追加一个test1方法
   Date.prototype.test1 = function () {console.log('我是Date原型上的test1方法')}
   
-  //给Date的原型对象上追加一个test2属性-----------这种写法没有意义
+  //给Date的原型对象上追加一个test2属性-----------这种写法没有意义,一般都追加方法
   Date.prototype.test2 = 100
   
   //尝试“废掉”Date上的prototype-----------js内置的函数不允许“废掉”prototype

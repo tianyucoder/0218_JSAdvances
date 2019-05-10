@@ -24,7 +24,7 @@
   demo.prototype.test2 = 'atguigu'
   
   //尝试“废掉”demo的prototype----------------自己定义的函数的prototype允许“废掉”
-  //demo.prototype = null
+  demo.prototype = null
   
   var d = new demo()
   console.log("@@@@@@@@")

@@ -26,9 +26,9 @@
     /*
     * 直接向实例对象上追加方法，也可以让实例调用，不过这样浪费内存
     * */
-    this.test = function () {
+    /*this.test = function () {
       console.log('我是Demo函数原型对象上的test方法')
-    }
+    }*/
   }
   console.log(Demo.prototype);
   console.log(Demo.prototype.constructor === Demo)
@@ -53,6 +53,10 @@
 
   demo.test()
   demo.test2()
+  
+  var d1 = new Demo()
+  console.log('@@@')
+  d1.test2()
   
   /*
   * 明确：

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>04_闭包的生命周期</title>
+
+</head>
+<body>
+<!--
+1. 产生: 内部函数被定义后就立即产生了闭包(并不是内部函数调用时才产生)
+2. 死亡: 在嵌套的内部函数成为垃圾对象时
+严重声明：闭包产生与否，与是否return内部函数没有任何关系！！！
+-->
+<script type="text/javascript">
+
+  function fn1() {
+    var a = 1
+    var fn2 = function() {
+      a++
+      console.log(a)
+    }
+    //return fn2
+    window.fn2 = fn2
+  }
+
+  fn1()
+  fn2()
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>04_作用域_面试题</title>
+</head>
+<body>
+<script type="text/javascript">
+ 
+ //问题1: 结果输出多少?
+ /*
+ * 函数的嵌套：
+ *    1.嵌套着调用-------问题不大
+ *    2.嵌套着定义-------作用域的查找要一步一步来
+ * */
+/*  var x = 10;
+  function fn() {
+    console.log(x);
+  }
+  function show(f) {
+    var x = 20;
+    f();
+  }
+  show(fn);*/
+  
+  
+  //问题2：输出多少?
+  var obj2 = {
+    fn2: function () {
+      console.log(fn2)
+    }
+  }
+  //console.log(obj2.fn2)
+  obj2.fn2()//报错
+
+</script>
+</body>
+</html>

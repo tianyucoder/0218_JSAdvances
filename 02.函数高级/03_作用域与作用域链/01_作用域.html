@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>01_作用域</title>
+</head>
+<body>
+<!--
+1. 理解
+  * 就是一块"地盘", 一个代码段所在的区域
+  * 它是静态的(相对于上下文对象), 在编写代码时就确定了
+2. 分类
+  * 全局作用域
+  * 函数作用域
+  * 没有块作用域(ES6有了)
+3. 作用
+  * 隔离变量，不同作用域下同名变量不会有冲突
+-->
+<script type="text/javascript">
+  
+  /*function demo(x) {
+    console.log(this)
+    console.log(x)
+    var a = 1
+  }
+  demo.call({m:2},3)*/
+  
+  /*var a = 1
+  var b = 2
+  function demo() {
+    var b = 3
+    console.log(b)
+  }*/
+  
+  /*console.log(x)
+  var c = 1
+  if(c === 6){
+    var x = 200
+  }
+  console.log(x)*/
+
+
+  //1.题目一：说出以下代码的执行结果
+  /*console.log(a1)//undefined
+  console.log(a2)//函数fn2
+  console.log(a3)//报错
+  console.log(a4)//undefined
+  
+  var a1 = 1
+  function a2() {
+    var a3 = 3
+  }
+  if(a1 === 6){
+    var a4 = 9
+  }*/
+
+  //2.题目二：说出以下代码的执行结果
+/*  console.log(a1)//undefined
+  console.log(a2)//undefined
+  //console.log(a3)//报错
+  //console.log(a4)//报错
+
+  var a1 = 1
+  var a2 = function () {
+    a3 = 3
+  }
+  if(a1 === 1){
+    a4 = 9
+  }
+  a2()
+  
+  console.log(a3)//3
+  console.log(a4)//9*/
+
+</script>
+</body>
+</html>

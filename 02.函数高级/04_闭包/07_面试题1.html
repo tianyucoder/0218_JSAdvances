@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>07_面试题1</title>
+</head>
+<body>
+
+<script type="text/javascript">
+  /*
+   说说它们的输出情况
+   */
+
+  //代码片段一
+  var name = "The Window";
+  var object = {
+    name: "My Object",
+    getNameFunc: function () {
+      console.log('我是第一个this',this)//object
+      return function () {
+        console.log('我是第二个this',this)//window
+        return this.name;
+      }
+    }
+  };
+  console.log(object.getNameFunc()());//The Window
+  
+  
+  
+  //代码片段二
+  var name = "The Window";
+  var object = {
+    name: "My Object",
+    getNameFunc: function () {
+      console.log(this)//object
+      var that = this;//----------缓存this
+      return function () {
+        console.log(this)//window
+        return that.name;//My Object
+      };
+    }
+  };
+  console.log(object.getNameFunc()());
+  
+</script>
+</body>
+</html>

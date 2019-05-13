@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>01_Object构造函数模式</title>
+</head>
+<body>
+<!--
+方式一: Object构造函数模式
+  * 套路: 先创建空Object对象, 再动态添加属性/方法
+  * 适用场景: 起始时不确定对象内部数据
+  * 问题: 语句太多（创建多个对象的时候）
+-->
+<script type="text/javascript">
+  //var p = new Object()
+  var p = {}
+  p.name = 'kobe'
+  p.age = 18
+  p.setName = function (name) {
+    this.name = name
+  }
+
+  var p2 = {}
+  p.name = 'wade'
+  p.age = 19
+  p.setName = function (name) {
+    this.name = name
+  }
+
+
+  console.log(p)
+  p.setName('wade')
+  console.log(p)
+
+</script>
+</body>
+</html>

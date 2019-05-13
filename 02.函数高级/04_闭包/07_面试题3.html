@@ -15,20 +15,20 @@
   function fun(n, o) {
     console.log(o)
     return {
-      fun: function (m) {
+      demo: function (m) {
         return fun(m, n)
       }
     }
   }
   
-  var a = fun(0)//undefined
-  a.fun(1)//0
-  a.fun(2)//0
-  a.fun(3)//0
-  a.fun(9,234234,234,234234,234)//0
+//  var a = fun(0)//undefined
+//  a.fun(1)//0
+//  a.fun(2)//0
+//  a.fun(3)//0
+//  a.fun(9,234234,234,234234,234)//0
 
   //以下代码比较“绕”
-  var b = fun(0).fun(1).fun(2).fun(3)
+  //fun(0).demo(1).demo(2).demo(3)
   var c = fun(0).fun(1)
   c.fun(2)
   c.fun(3)

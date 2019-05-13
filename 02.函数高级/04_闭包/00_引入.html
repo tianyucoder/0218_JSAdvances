@@ -14,26 +14,17 @@
 -->
 <script type="text/javascript">
   //一下代码有问题
-  /*var btns = document.getElementsByTagName('button')
+  var btns = document.getElementsByTagName('button')
   for (var i=0; i<btns.length; i++ ){
     var item = btns[i]
     item.onclick = function () {
       alert(i)
     }
-  }*/
+  }
 
- //缓存计数器
-  /*var btns = document.getElementsByTagName('button')
-  for (var i=0; i<btns.length; i++ ){
-    var item = btns[i]
-    item.index = i
-    item.onclick = function () {
-      alert(this.index)
-    }
-  }*/
   
   //利用闭包解决
-  /*var btns = document.getElementsByTagName('button')
+  var btns = document.getElementsByTagName('button')
   for (var i=0; i<btns.length; i++ ){
     (function (i) {
       var item = btns[i]
@@ -41,16 +32,16 @@
         alert(i)
       }
     })(i)
-  }*/
+  }
   
   //利用ES6块级作用域
-  /*var btns = document.getElementsByTagName('button')
+  var btns = document.getElementsByTagName('button')
   for (let i=0; i<btns.length; i++ ){
     var item = btns[i]
     item.onclick = function () {
       alert(i)
     }
-  }*/
+  }
   
 
 

@@ -15,6 +15,38 @@
 在分线程计算: 不会阻塞主线程
 -->
 <script type="text/javascript">
+  var btn1 = document.getElementById('btn1')
+  var btn2 = document.getElementById('btn2')
+  var inputData = document.getElementById('number')
+  
+  //计算斐波那契数列
+  function fibonacci(n) {
+    return n<3 ? 1:fibonacci(n-2) + fibonacci(n-1)
+  }
+  
+  //主线程计算斐波那契数列
+  btn1.onclick = function () {
+      var number = inputData.value
+      var result = fibonacci(number)
+      alert(result)
+  }
+  
+  //分线程计算斐波那契数列
+  btn2.onclick = function () {
+    var number = inputData.value
+    //1.创建webworker实例对象
+    var worker = new Worker('worker.js')
+    //2.给分线程发送数据
+    worker.postMessage(number)
+    //3.接收分线程过来的数据
+    worker.addEventListener('message',function (event) {
+      var res = event.data
+      console.log('接收到了分线程过来的处理结果',res)
+      alert(res)
+    })
+  }
+  
+  
 
 </script>
 </body>
